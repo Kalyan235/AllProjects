@@ -1,0 +1,19 @@
+package FunctionalInterface;
+
+import java.util.Arrays;
+import java.util.List;
+
+public class Java8PredicateDemo {
+
+	public static void main(String[] args) {
+
+		List<Integer> list = Arrays.asList(12, 3, 8, 9, 5, 4, 6);
+		System.out.println(list);
+            //ONe Way
+		
+		list.stream().filter(num -> num % 2 != 0).forEach(System.out::println);
+            // Another Way
+		
+		list.stream().filter(num -> num % 2 == 0).forEach(num -> System.out.println(num));
+	}
+}

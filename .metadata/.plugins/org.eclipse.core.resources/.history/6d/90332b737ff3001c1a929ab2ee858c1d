@@ -1,0 +1,28 @@
+package test;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.*;
+
+public class DisConfig extends GenericServlet {
+
+	public int count; // Instance variable.
+
+	public void init(ServletConfig sc) {
+
+		count = Integer.parseInt(getInitParameter("count"));
+	}
+
+	@Override
+	public void service(ServletRequest req, ServletResponse res) throws ServletException, IOException {
+		PrintWriter pw = res.getWriter();
+		res.setContentType("text/html");
+		pw.println("Value of count:" + count);
+		pw.close();
+	}
+
+	public void destroy() {
+
+	}
+}

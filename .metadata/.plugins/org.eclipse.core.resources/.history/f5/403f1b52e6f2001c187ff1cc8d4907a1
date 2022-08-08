@@ -1,0 +1,32 @@
+package com.servletsprograms;
+
+import java.io.IOException;
+import java.io.PrintWriter;
+
+import javax.servlet.*;
+import javax.servlet.annotation.WebServlet;
+import javax.servlet.http.*;
+
+@WebServlet("/pqr") // Annotation
+public class ServeletsDemo extends HttpServlet {
+
+	public void init() {
+
+	}
+
+	public void service(ServletRequest req, ServletResponse res) {
+
+		try {
+			PrintWriter pw = res.getWriter();
+			res.setContentType("text/html");
+			pw.println("Octavia From Sky Crew");
+		} catch (IOException e) {
+
+			e.printStackTrace();
+		}
+	}
+
+	public void destroy() {
+
+	}
+}
